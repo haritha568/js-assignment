@@ -1,0 +1,93 @@
+2)Explain with examples the remaining methods of string and array?
+A)Remaining are:
+	1)Replacing String Content:-
+
+The replace() method replaces a specified value with another value in a string:
+Example:
+str = "Please visit Microsoft!";
+var n = str.replace("Microsoft", "W3Schools");
+
+The replace() method does not change the string it is called on. It returns a new string.
+	2)converting to Upper and Lower Case:
+
+A string is converted to upper case with toUpperCase():
+Example:
+var text1 = "Hello World!";       // String
+var text2 = text1.toUpperCase();  // text2 is text1 converted to upper
+
+A string is converted to lower case with toLowerCase():
+Example:
+var text1 = "Hello World!";       // String
+var text2 = text1.toLowerCase();  // text2 is text1 converted to lower 
+	3)concat() Method:
+
+concat() joins two or more strings:
+Example
+var text1 = "Hello";
+var text2 = "World";
+var text3 = text1.concat(" ", text2);
+
+The concat() method can be used instead of the plus operator. These two lines do the same:
+Example
+var text = "Hello" + " " + "World!";
+var text = "Hello".concat(" ", "World!");
+	4)String.trim()
+
+The trim() method removes whitespace from both sides of a string:
+Example
+var str = "       Hello World!        ";
+alert(str.trim());
+
+The trim() method is not supported in Internet Explorer 8 or lower.
+	5)Extracting String Characters
+
+There are 3 methods for extracting string characters:
+
+   1. charAt(position)
+   2.charCodeAt(position)
+   3.Property access [ ]
+
+The charAt() Method:-
+
+The charAt() method returns the character at a specified index (position) in a string:
+Example
+var str = "HELLO WORLD";
+str.charAt(0);            // returns H
+
+The charCodeAt() Method:-
+The charCodeAt() method returns the unicode of the character at a specified index in a string:
+The method returns a UTF-16 code (an integer between 0 and 65535).
+Example
+var str = "HELLO WORLD";
+str.charCodeAt(0);         // returns 72
+
+Property Access:-
+ECMAScript 5 (2009) allows property access [ ] on strings:
+Example
+var str = "HELLO WORLD";
+str[0];                   // returns H 
+
+
+Remaining Array method:-
+	1)Automatic toString()
+
+JavaScript automatically converts an array to a comma separated string when a primitive value is expected.
+
+This is always the case when you try to output an array.
+
+These two examples will produce the same result:
+Example
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML = fruits.toString();  //Banana,Orange,Apple,Mango
+	2)Slicing an Array:
+The slice() method slices out a piece of an array into a new array.
+This example slices out a part of an array starting from array element 1 ("Orange"):
+Example
+var fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+var citrus = fruits.slice(1);     //Banana,Orange,Lemon,Apple,Mango
+									Orange,Lemon,Apple,Mango
+	3)Using splice() to Remove Elements:
+With clever parameter setting, you can use splice() to remove elements without leaving "holes" in the array:
+Example
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.splice(0, 1);        // Removes the first element of fruits 
