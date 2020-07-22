@@ -1,0 +1,67 @@
+<html>
+<head>
+	<title>Welcome to WebPage </title>
+	</head>
+	<style>
+		body {
+	padding: 25px;
+	background-color: white;
+	color:black;
+	font-size: 25px;
+}
+.dark-mode{
+	background-color: black;
+	color:white;
+}
+h1{
+	color:yellow;
+}
+.clock {
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform: translate(-50%) translateY(-50%);
+	color:blue;
+	font-size: 60px;
+	letter-spacing: 7px;
+}
+	</style>
+	<body>
+		<button onclick="myFunction()">Toggle darkmode</button> <br>
+	<div>
+		<label for="username">Name:</label> <br>
+		<input id="username" type="text"> <br>
+		<input type="submit" value="Submit">
+	</div>
+	<h1>Welcome to my webpagae!!!!</h1>
+	<div id="MyClockDisplay" class="clock" onload="showTime()"></div>
+		<script>
+			function myFunction() {
+				var element=document.body;
+				element.classList.toggle("dark-mode");
+			}
+			function showTime() {
+				var date=new Date();
+				var h = date.getHours();
+				var m = date.getMinutes();
+				var s = date.getSeconds();
+				var session = "AM";
+				if(h == 0){
+					h=12;
+				}
+				if (h>12) {
+					h=h-12;
+					session = "PM";
+				}
+				h = (h < 10) ? "0" + h : h;
+				m = (m < 10) ? "0" + m : m;
+				s = (s < 10) ? "0" + s : s;
+				var time = h + ":" + m +":" + s + " " + session;
+				document.getElementById("MyClockDisplay").innerText = time;
+				document.getElementById("MyClockDisplay").textContent = time;
+				setTimeout(showTime, 1000);
+			}
+			showTime();
+		</script>
+	</body>
+</html>
