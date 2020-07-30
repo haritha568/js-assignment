@@ -1,0 +1,30 @@
+<html>
+<head>
+	<title>Quote Generator</title>
+	</head>
+	<body>
+		<h1>Simple Quote Generator</h1>
+		<div id="quoteDisplay">
+		</div>
+		<button onclick="newQuote()">New Quote</button>
+		<script>
+			var quotes = [
+			'The Way Get started is to quit talking and being doing. - walt disney',
+			'The secret of getting ahead is getting started. – Mark Twain',
+			'The best time to plant a tree was 20 years ago. The second best time is now – Chinese Proverb',
+			'It’s hard to beat a person who never gives up. – Babe Ruth',
+			'Write it. Shoot it. Publish it. Crochet it, sauté it, whatever. MAKE. – Joss Whedon',
+			'Smart people learn from everything and everyone, average people from their experiences, stupid people already have all the answers. – Socrates',
+			'Do what you feel in your heart to be right – for you’ll be criticized anyway.― Eleanor Roosevelt',
+			'Happiness is not something ready made. It comes from your own actions. ― Dalai Lama XIV',
+			'If we have the attitude that it’s going to be a great day it usually is. – Catherine Pulsifier',
+			'Magic is believing in yourself. If you can make that happen, you can make anything happen. – Johann Wolfgang Von Goethe',
+			'Don’t be afraid to give up the good to go for the great. – John D. Rockefeller'
+			]
+			function newQuote() {
+				var randomNumber = Math.floor(Math.random() * (quotes.length));
+				document.getElementById('quoteDisplay').innerHTML = quotes[randomNumber];
+			}
+		</script>
+	</body>
+</html>
